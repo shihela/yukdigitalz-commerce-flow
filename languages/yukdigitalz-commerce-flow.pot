@@ -1,0 +1,100 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Yukdigitalz Commerce Flow 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-14 13:50+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: yukdigitalz-commerce-flow.php:54
+msgid "Yukdigitalz Commerce Flow requires WooCommerce to be installed and activated."
+msgstr ""
+
+#: includes/ShadowCart.php:20
+#: includes/ShadowCart.php:22
+msgid "Abandoned Carts"
+msgstr ""
+
+#: includes/ShadowCart.php:21
+msgid "Abandoned Cart"
+msgstr ""
+
+#: includes/ShadowCart.php:23
+msgid "All Abandoned Records"
+msgstr ""
+
+#: includes/ShadowCart.php:82
+msgid "Already captured"
+msgstr ""
+
+#: includes/ShadowCart.php:153
+msgid "Captured"
+msgstr ""
+
+#: includes/ShadowCart.php:191
+msgid "Prospect Email"
+msgstr ""
+
+#: includes/ShadowCart.php:192
+msgid "Abandoned Products"
+msgstr ""
+
+#: includes/ShadowCart.php:193
+msgid "Affiliate ID"
+msgstr ""
+
+#: includes/ShadowCart.php:194
+msgid "Status"
+msgstr ""
+
+#: includes/ShadowCart.php:204
+msgid "Empty Cart"
+msgstr ""
+
+#: includes/ShadowCart.php:210
+#, php-format
+msgid "ID: %d"
+msgstr ""
+
+#: includes/ShadowCart.php:213
+msgid "- Organic -"
+msgstr ""
+
+#: includes/ShadowCart.php:219
+msgid "Recovered"
+msgstr ""
+
+#: includes/ShadowCart.php:221
+msgid "Pending"
+msgstr ""
+
+#: includes/ShadowCart.php:198
+msgid "Actions"
+msgstr ""
+
+#: includes/ShadowCart.php:240
+msgid "Complete your order"
+msgstr ""
+
+#: includes/ShadowCart.php:243
+#, php-format
+msgid "Hi,\n\nWe noticed you left items in your cart. You can complete your purchase here:\n%s\n\nBest regards,"
+msgstr ""
+
+#: includes/ShadowCart.php:252
+msgid "Send Email"
+msgstr ""
+
+#: includes/ShadowCart.php:258
+msgid "Copied!"
+msgstr ""
+
+#: includes/ShadowCart.php:259
+msgid "Copy Link"
+msgstr ""
