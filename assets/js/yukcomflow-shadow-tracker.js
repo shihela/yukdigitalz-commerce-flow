@@ -1,29 +1,36 @@
 jQuery(document).ready(function ($) {
-	let emailCaptured = false;
+	var lastCapturedEmail = '';
+	var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	var emailSelector = '#billing_email, #email, .wc-block-checkout input[type="email"]';
 
-	$('#billing_email').on('blur', function () {
-		if (emailCaptured) {
+	function captureCheckoutEmail(rawValue) {
+		var email = $.trim(String(rawValue || ''));
+		if (!email || email === lastCapturedEmail || !emailRegex.test(email)) {
 			return;
 		}
 
-		let email = $(this).val();
-		let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-		if (email && emailRegex.test(email)) {
-			$.ajax({
-				url: yukComFlowShadowCart.ajaxUrl,
-				type: 'POST',
-				data: {
-					action: 'yukcomflow_capture_email',
-					email: email,
-					security: yukComFlowShadowCart.nonce,
-				},
-				success: function (response) {
-					if (response.success) {
-						emailCaptured = true;
-					}
-				},
-			});
+		if (typeof yukComFlowShadowCart === 'undefined' || !yukComFlowShadowCart.ajaxUrl) {
+			return;
 		}
+
+		$.ajax({
+			url: yukComFlowShadowCart.ajaxUrl,
+			type: 'POST',
+			data: {
+				action: 'yukcomflow_capture_email',
+				email: email,
+				security: yukComFlowShadowCart.nonce,
+			},
+			success: function (response) {
+				if (response && response.success) {
+					lastCapturedEmail = email;
+				}
+			},
+		});
+	}
+
+	// Delegated events ensure compatibility with both Classic Checkout and WooCommerce Block Checkout.
+	$(document).on('blur change', emailSelector, function () {
+		captureCheckoutEmail($(this).val());
 	});
 });

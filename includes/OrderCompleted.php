@@ -11,15 +11,18 @@ class YukComFlow_OrderCompleted {
 
 	/**
 	 * Hook actions.
+	 *
+	 * @return void
 	 */
 	public static function init() {
 		add_action( 'woocommerce_order_status_completed', array( __CLASS__, 'handle_order_completed' ) );
 	}
 
 	/**
-	 * Handle completed orders and trigger license generation actions.
+	 * Handle completed orders and trigger license generation actions idempotently.
 	 *
 	 * @param int $order_id The completed order ID.
+	 * @return void
 	 */
 	public static function handle_order_completed( $order_id ) {
 		$order_id = absint( $order_id );
@@ -28,15 +31,19 @@ class YukComFlow_OrderCompleted {
 			return;
 		}
 
-		$plan = $order->get_meta( '_yukcomflow_plan' );
-		if ( empty( $plan ) ) {
+		// Prevent duplicate license dispatch if order status transitions to completed more than once.
+		if ( ! empty( $order->get_meta( '_yukcomflow_license_dispatched' ) ) ) {
+			return;
+		}
+
+		$plan = (string) $order->get_meta( '_yukcomflow_plan' );
+		if ( '' === $plan ) {
 			return;
 		}
 
 		foreach ( $order->get_items() as $item_id => $item ) {
-			// Build license payload using the contract helper.
 			$license_data            = YukComFlow_Contract::build_license_data( $order, $item, $plan );
-			$license_data['item_id'] = $item_id; // Add item_id to associate the license with the order item.
+			$license_data['item_id'] = absint( $item_id );
 
 			/**
 			 * Trigger license generation. Premium plugins hook into this action.
@@ -45,5 +52,16 @@ class YukComFlow_OrderCompleted {
 			 */
 			do_action( 'yukcomflow_generate_license_from_flow', $license_data );
 		}
+
+		$order->update_meta_data( '_yukcomflow_license_dispatched', time() );
+		$order->save_meta_data();
+
+		YukComFlow_Logger::info(
+			'Dispatched license generation hooks for completed order.',
+			array(
+				'order_id' => $order_id,
+				'plan'     => $plan,
+			)
+		);
 	}
 }

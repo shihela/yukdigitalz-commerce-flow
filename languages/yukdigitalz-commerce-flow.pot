@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Yukdigitalz Commerce Flow 1.0.0\n"
+"Project-Id-Version: Yukdigitalz Commerce Flow 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-14 13:50+0700\n"
+"POT-Creation-Date: 2026-11-26 16:45+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,89 +12,401 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: yukdigitalz-commerce-flow.php:54
+#: yukdigitalz-commerce-flow.php
 msgid "Yukdigitalz Commerce Flow requires WooCommerce to be installed and activated."
 msgstr ""
 
-#: includes/ShadowCart.php:20
-#: includes/ShadowCart.php:22
-msgid "Abandoned Carts"
+#: includes/Settings.php
+msgid "Settings"
 msgstr ""
 
-#: includes/ShadowCart.php:21
-msgid "Abandoned Cart"
+#: includes/SettingsPage.php
+msgid "Commerce Flow"
 msgstr ""
 
-#: includes/ShadowCart.php:23
-msgid "All Abandoned Records"
+#: includes/SettingsPage.php
+msgid "Direct Checkout Routing"
 msgstr ""
 
-#: includes/ShadowCart.php:82
-msgid "Already captured"
+#: includes/SettingsPage.php
+#, php-format
+msgid "Configure how plan-based direct checkout links behave. Current URL format: %s"
 msgstr ""
 
-#: includes/ShadowCart.php:153
-msgid "Captured"
+#: includes/SettingsPage.php
+msgid "Base URL Slug"
 msgstr ""
 
-#: includes/ShadowCart.php:191
-msgid "Prospect Email"
+#: includes/SettingsPage.php
+msgid "The leading URL segment used for direct checkout links (default: buy). Letters, numbers, and hyphens only."
 msgstr ""
 
-#: includes/ShadowCart.php:192
-msgid "Abandoned Products"
+#: includes/SettingsPage.php
+msgid "Cart Behavior"
 msgstr ""
 
-#: includes/ShadowCart.php:193
-msgid "Affiliate ID"
+#: includes/SettingsPage.php
+msgid "Choose whether direct checkout links replace the existing cart or append to it."
 msgstr ""
 
-#: includes/ShadowCart.php:194
+#: includes/SettingsPage.php
+msgid "Replace existing cart (Recommended for SaaS / single-plan checkout)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Append to existing cart"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Fallback Redirect URL"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Optional URL to redirect visitors if a product or plan cannot be added to the cart. Leave blank to fall back to the product or shop page."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "SaaS Checkout Experience (Optional)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Optional conversion enhancements for digital and virtual products. Compatible with Classic and Block Checkout."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Lean Digital Checkout Mode"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Simplify checkout fields automatically when the cart contains only virtual (non-shippable) products. Billing country is preserved for tax and payment gateway compatibility."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Fields to Hide (Virtual Carts)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Hide street address, city, state, and postcode fields"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Hide company name field"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Hide phone number field (uncheck if required by your payment gateway)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Hide order notes field"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "In-Checkout Plan Switcher"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Display a compact plan/variation switcher on the checkout page for variable products so buyers can upgrade or change billing cycles without leaving checkout. Also available via [yukcomflow_plan_switcher]."
+msgstr ""
+
+#: includes/CheckoutUX.php
+msgid "Switch Plan"
+msgstr ""
+
+#: includes/CheckoutUX.php
+#, php-format
+msgid "Selected Plan for %s"
+msgstr ""
+
+#: includes/CheckoutUX.php
+msgid "Switch plan anytime before completing payment"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Abandoned Cart (Shadow Cart)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Control checkout email capture, recovery link expiration, and GDPR data retention."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Enable Shadow Cart Tracking"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Capture prospect email addresses on checkout when the cart is not empty."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Recovery Link Expiry (Days)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Number of days a cart recovery link remains valid (minimum 1 day)."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Auto-Delete Retention (Days)"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Automatically delete abandoned cart records older than this many days. Set to 0 to disable automatic deletion."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Diagnostics & Logging"
+msgstr ""
+
+#: includes/SettingsPage.php
+#, php-format
+msgid "View operational warnings and debug traces under %s (source: yukdigitalz-commerce-flow)."
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "WooCommerce &rarr; Status &rarr; Logs"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Enable Debug Logging"
+msgstr ""
+
+#: includes/SettingsPage.php
+msgid "Record detailed routing, coupon, and cart recovery events in WooCommerce Logs. Warnings and errors are always logged."
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Buy Now"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Commerce Flow Direct Links"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Save this product first to generate direct checkout links."
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Publish or save a draft with a product slug to generate direct checkout links."
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Simple Product"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "No published simple product or variations available yet. Add variations to generate plan links."
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Copy a direct checkout link or shortcode below. You can also append &coupon=CODE or &qty=2 to any URL."
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Plan / Variation"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Direct Checkout URL"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Copy URL"
+msgstr ""
+
+#: includes/ProductLinks.php
+msgid "Copy Shortcode"
+msgstr ""
+
+#: includes/CheckoutHandler.php
+msgid "This product or plan is currently unavailable for direct checkout."
+msgstr ""
+
+#: includes/OrderMeta.php
+msgid "Commerce Flow Plan"
+msgstr ""
+
+#: includes/OrderMeta.php
+msgid "Billing Cycle"
+msgstr ""
+
+#: includes/OrderMeta.php
+msgid "Attribution (UTM)"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "When you enter your email address on the checkout page while items are in your cart, Yukdigitalz Commerce Flow may temporarily store your email address, selected plan, and cart contents to help you recover an incomplete checkout."
+msgstr ""
+
+#: includes/Privacy.php
+#, php-format
+msgid "Abandoned cart records are automatically marked as recovered once an order is placed and are permanently deleted after %d days."
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Yukdigitalz Commerce Flow"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Yukdigitalz Commerce Flow Abandoned Carts"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Abandoned Cart Records"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Email Address"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Products"
+msgstr ""
+
+#: includes/Privacy.php
+msgid "Selected Plan"
+msgstr ""
+
+#: includes/Privacy.php
 msgid "Status"
 msgstr ""
 
-#: includes/ShadowCart.php:204
+#: includes/Privacy.php
+msgid "Captured Date"
+msgstr ""
+
+#: includes/Router.php
+msgid "This cart recovery link is invalid or has expired."
+msgstr ""
+
+#: includes/Router.php
+msgid "The requested product or plan could not be found."
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Abandoned Carts"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Abandoned Cart"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "All Abandoned Records"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Copied!"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Tracking is disabled."
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Invalid email address."
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Too many requests. Please try again later."
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Cart is empty."
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Already captured"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Captured"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Prospect Email"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Abandoned Products"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Affiliate ID"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Actions"
+msgstr ""
+
+#: includes/ShadowCart.php
 msgid "Empty Cart"
 msgstr ""
 
-#: includes/ShadowCart.php:210
+#: includes/ShadowCart.php
 #, php-format
 msgid "ID: %d"
 msgstr ""
 
-#: includes/ShadowCart.php:213
+#: includes/ShadowCart.php
 msgid "- Organic -"
 msgstr ""
 
-#: includes/ShadowCart.php:219
+#: includes/ShadowCart.php
 msgid "Recovered"
 msgstr ""
 
-#: includes/ShadowCart.php:221
+#: includes/ShadowCart.php
 msgid "Pending"
 msgstr ""
 
-#: includes/ShadowCart.php:198
-msgid "Actions"
+#: includes/ShadowCart.php
+msgid "Completed"
 msgstr ""
 
-#: includes/ShadowCart.php:240
+#: includes/ShadowCart.php
 msgid "Complete your order"
 msgstr ""
 
-#: includes/ShadowCart.php:243
+#: includes/ShadowCart.php
 #, php-format
 msgid "Hi,\n\nWe noticed you left items in your cart. You can complete your purchase here:\n%s\n\nBest regards,"
 msgstr ""
 
-#: includes/ShadowCart.php:252
+#: includes/ShadowCart.php
 msgid "Send Email"
 msgstr ""
 
-#: includes/ShadowCart.php:258
-msgid "Copied!"
+#: includes/ShadowCart.php
+msgid "Copy Link"
 msgstr ""
 
-#: includes/ShadowCart.php:259
-msgid "Copy Link"
+#: includes/ShadowCart.php
+msgid "Total Captured"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Recovered Revenue"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "All Statuses"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Cart Value"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Source (UTM)"
+msgstr ""
+
+#: includes/ShadowCart.php
+msgid "Direct"
+msgstr ""
+
+#: includes/ShadowCart.php
+#, php-format
+msgid "Order #%d"
 msgstr ""
